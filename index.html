@@ -2,33 +2,84 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <title>桜の幻想サイト</title>
 
-  <title>ようこそ</title>
-
-  <!-- 検索結果に出さない設定 -->
+  <!-- 検索除け -->
   <meta name="robots" content="noindex,nofollow">
 
   <style>
+    /* フォントを「読み込む」宣言 */
+    @font-face {
+      font-family: "RondeBSquare";
+      src: url("fonts/Ronde-B_square.otf");
+    }
+
     body {
-      background-color: #ffffff;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(
+        180deg,
+        #fff7fa 0%,
+        #fff0f6 100%
+      );
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+
+      /* ここで「使う」と指定 */
+      font-family: "RondeBSquare", sans-serif;
+      color: #5a2c3a;
     }
 
-    .welcome {
-      color: pink;
+    .container {
+      text-align: center;
+      padding: 40px 60px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      box-shadow: 0 0 30px rgba(242, 162, 192, 0.25);
+    }
+
+    h1 {
       font-size: 48px;
-      font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      margin-bottom: 24px;
+      color: #d86a9c;
+      letter-spacing: 0.15em;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+
+    .enter-button {
+      display: inline-block;
+      padding: 14px 48px;
+      font-size: 20px;
+      color: white;
+      background-color: #f2a2c0;
+      border-radius: 999px;
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <div class="welcome">
-    ようこそ
+  <div class="container">
+    <h1>サイトタイトル</h1>
+
+    <div class="description">
+      あいうえおかきくけこさしすせそたちつてと<br>
+      なにぬねのはひふへほまみむめもやゆよ<br>
+      らりるれろわをん<br><br>
+      あいうえおかきくけこさしすせそたちつてと<br>
+      なにぬねのはひふへほまみむめもやゆよ<br>
+      らりるれろわをん
+    </div>
+
+    <a href="gallery.html" class="enter-button">
+      Enter
+    </a>
   </div>
 </body>
 </html>
