@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>展示室｜雪姫物々交換市場</title>
+
+  <!-- スマホ最優先 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 検索除け -->
+  <meta name="robots" content="noindex,nofollow">
+
+  <style>
+    @font-face {
+      font-family: 'RondeBSquare';
+      src: url('fonts/Ronde-B_square.otf') format('opentype');
+    }
+
+    :root {
+      --sakura-bg: #fff6fa;
+      --sakura-main: #f3a7c4;
+      --sakura-accent: #d86a9c;
+      --text-color: #4a2430;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #fffafd 0%, var(--sakura-bg) 100%);
+      font-family: "RondeBSquare", sans-serif;
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--sakura-accent);
+      margin-bottom: 40px;
+      letter-spacing: 0.1em;
+    }
+
+    .work {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 28px;
+    }
+
+    .author {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .author a {
+      color: var(--sakura-accent);
+      text-decoration: none;
+    }
+
+    .author a:hover {
+      text-decoration: underline;
+    }
+
+    .description {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* 桜の花びら */
+    .sakura {
+      position: fixed;
+      top: -10%;
+      width: 12px;
+      height: 12px;
+      background: rgba(243, 167, 196, 0.9);
+      border-radius: 60% 40% 60% 40%;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(120vh) translateX(40px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 桜 -->
+  <div class="sakura" style="left:15%; animation-duration:13s;"></div>
+  <div class="sakura" style="left:35%; animation-duration:16s;"></div>
+  <div class="sakura" style="left:55%; animation-duration:11s;"></div>
+  <div class="sakura" style="left:75%; animation-duration:14s;"></div>
+  <div class="sakura" style="left:90%; animation-duration:12s;"></div>
+
+  <div class="container">
+    <h1>展示室</h1>
+
+    <!-- 小説作品 -->
+    <div class="work">
+      <div class="author">
+        製作者名：
+        <a href="works/novel01.html">しの</a>
+      </div>
+      <div class="description">
+        雪姫の小説です。姫さまの片想い。<br>
+        現パロで同じ中高一貫校に通う雪姫が、<br>
+        ゆっくり心を通わせていく様子を描きます。<br>
+        ざっと２万文字程度。
+      </div>
+    </div>
+
+    <!-- 漫画作品 -->
+    <div class="work">
+      <div class="author">
+        製作者名：
+        <a href="works/comic01.html">しの</a>
+      </div>
+      <div class="description">
+        雪姫の漫画。<br>
+        追憶の後に起こったことを、<br>
+        ピックアップして描きます。
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
