@@ -2,84 +2,137 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>桜の幻想サイト</title>
+  <title>雪姫物々交換市場</title>
+
+  <!-- スマホ最優先 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- 検索除け -->
   <meta name="robots" content="noindex,nofollow">
 
   <style>
-    /* フォントを「読み込む」宣言 */
+    /* フォント読み込み */
     @font-face {
       font-family: "RondeBSquare";
       src: url("fonts/Ronde-B_square.otf");
     }
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(
-        180deg,
-        #fff7fa 0%,
-        #fff0f6 100%
-      );
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      /* ここで「使う」と指定 */
-      font-family: "RondeBSquare", sans-serif;
-      color: #5a2c3a;
+    :root {
+      --sakura-bg: #fff6fa;
+      --sakura-main: #f3a7c4;
+      --sakura-accent: #d86a9c;
+      --text-color: #4a2430;
     }
 
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #fffafd 0%, var(--sakura-bg) 100%);
+      font-family: "RondeBSquare", sans-serif;
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    /* 中央コンテンツ */
     .container {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 20px 56px;
       text-align: center;
-      padding: 40px 60px;
-      background-color: rgba(255, 255, 255, 0.7);
-      border-radius: 24px;
-      box-shadow: 0 0 30px rgba(242, 162, 192, 0.25);
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 24px;
-      color: #d86a9c;
-      letter-spacing: 0.15em;
+      font-size: 32px;
+      letter-spacing: 0.12em;
+      margin-bottom: 28px;
+      color: var(--sakura-accent);
     }
 
     .description {
-      font-size: 18px;
+      font-size: 15px;
       line-height: 2;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     .enter-button {
       display: inline-block;
       padding: 14px 48px;
-      font-size: 20px;
-      color: white;
-      background-color: #f2a2c0;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background-color: var(--sakura-main);
       border-radius: 999px;
       text-decoration: none;
+    }
+
+    /* 桜の花びら */
+    .sakura {
+      position: fixed;
+      top: -10%;
+      width: 12px;
+      height: 12px;
+      background: rgba(243, 167, 196, 0.9);
+      border-radius: 60% 40% 60% 40%;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(120vh) translateX(40px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* スマホより大きい画面用（タブレット・PC） */
+    @media screen and (min-width: 700px) {
+      h1 {
+        font-size: 42px;
+      }
+      .description {
+        font-size: 17px;
+      }
+      .enter-button {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- 桜を散らす（数は少なめ・軽量） -->
+  <div class="sakura" style="left:10%; animation-duration:12s;"></div>
+  <div class="sakura" style="left:30%; animation-duration:15s;"></div>
+  <div class="sakura" style="left:50%; animation-duration:10s;"></div>
+  <div class="sakura" style="left:70%; animation-duration:14s;"></div>
+  <div class="sakura" style="left:85%; animation-duration:11s;"></div>
+
   <div class="container">
-    <h1>サイトタイトル</h1>
+    <h1>雪姫物々交換市場</h1>
 
     <div class="description">
-      あいうえおかきくけこさしすせそたちつてと<br>
-      なにぬねのはひふへほまみむめもやゆよ<br>
-      らりるれろわをん<br><br>
-      あいうえおかきくけこさしすせそたちつてと<br>
-      なにぬねのはひふへほまみむめもやゆよ<br>
-      らりるれろわをん
+      雪姫物々交換市場へようこそ！<br>
+      素敵な雪姫を生み出してくださり、本当にありがとうございます。<br><br>
+
+      こちらでは、皆さまから頂いた雪姫を展示しております。<br>
+      心ゆくまでお楽しみください。<br><br>
+
+      お時間がありましたら、ぜひ素敵な製作者の方々に、<br>
+      何か感想を送って頂ければ幸いです。
     </div>
 
-    <a href="gallery.html" class="enter-button">
-      Enter
-    </a>
+    <a href="gallery.html" class="enter-button">Enter</a>
   </div>
+
 </body>
 </html>
