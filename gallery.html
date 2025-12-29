@@ -16,6 +16,11 @@
       src: url('fonts/Ronde-B_square.otf') format('opentype');
     }
 
+    @font-face {
+      font-family: 'Azuki';
+      src: url('fonts/azuki.ttf') format('truetype');
+    }
+
     :root {
       --sakura-bg: #fff6fa;
       --sakura-main: #f3a7c4;
@@ -40,8 +45,10 @@
       padding: 40px 20px 60px;
     }
 
+    /* ===== タイトル ===== */
     h1 {
       text-align: center;
+      font-family: 'Azuki', serif;   /* ← あずきフォント */
       color: var(--sakura-accent);
       margin-bottom: 40px;
       letter-spacing: 0.1em;
@@ -98,6 +105,17 @@
         opacity: 0;
       }
     }
+
+    /* ===== PC・タブレット表示 ===== */
+    @media screen and (min-width: 700px) {
+      .author {
+        font-size: 20px;      /* ← 少し大きく */
+      }
+
+      .description {
+        font-size: 16px;      /* ← 少し大きく */
+      }
+    }
   </style>
 </head>
 
@@ -113,7 +131,7 @@
   <div class="container">
     <h1>展示室</h1>
 
-    <!-- 小説作品 -->
+    <!-- 小説 -->
     <div class="work">
       <div class="author">
         製作者名：
@@ -127,7 +145,7 @@
       </div>
     </div>
 
-    <!-- 漫画作品 -->
+    <!-- 漫画 -->
     <div class="work">
       <div class="author">
         製作者名：
